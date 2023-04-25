@@ -1,0 +1,305 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.eschoysman</groupId>
+	<artifactId>mapper</artifactId>
+	<version>1.0.0</version>
+
+	<name>Mapper</name>
+	<description>Library for mapping a java object to another</description>
+	<url>https://github.com/eschoysman/Mapper</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>eschoysman</name>
+			<organizationUrl>https://github.com/eschoysman</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/eschoysman/Mapper/tree/master</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version.source>1.8</java.version.source>
+		<java.version.target>1.8</java.version.target>
+		<junit.version>5.5.0-M1</junit.version>
+		<junit.platform.runner.version>1.5.0-M1</junit.platform.runner.version>
+		<junit.engine.version>5.5.0-M1</junit.engine.version>
+		<assertj.version>3.12.2</assertj.version>
+		<clover.version>4.3.1</clover.version>
+		<maven.compiler.plugin>3.7.0</maven.compiler.plugin>
+		<maven.jar.plugin>3.1.2</maven.jar.plugin>
+		<maven.source.plugin>3.1.0</maven.source.plugin>
+		<maven.javadoc.plugin>3.1.1</maven.javadoc.plugin>
+		<spring.context.version>[2.5,6)</spring.context.version>
+		<lombok.version>[1.18.22,)</lombok.version>
+		<maven-site-plugin.version>3.8.2</maven-site-plugin.version>
+		<github.global.server>github</github.global.server>
+		<site-maven-plugin.version>0.12</site-maven-plugin.version>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>gitRepo</id>
+			<name>Mapper</name>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+		<finalName>mapper</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin}</version>
+				<configuration>
+					<source>${java.version.source}</source>
+					<target>${java.version.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.openclover</groupId>
+				<artifactId>clover-maven-plugin</artifactId>
+				<version>${clover.version}</version>
+				<configuration>
+					<includesTestSourceRoots>false</includesTestSourceRoots>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven.jar.plugin}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven.source.plugin}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin}</version>
+				<configuration>
+					<docfilessubdirs>true</docfilessubdirs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>clean-docs</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<excludeDefaultDirectories>true</excludeDefaultDirectories>
+							<filesets>
+								<fileset>
+									<directory>docs</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+									<followSymlinks>false</followSymlinks>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-jars</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/jar</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>*.jar</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-javadoc</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/docs</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target/apidocs</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Plugin for deploy on github personal repository -->
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.1</version>
+				<configuration>
+					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>${site-maven-plugin.version}</version>
+				<configuration>
+					<message>Maven artifacts for ${project.artifactId}-${project.version}</message> <!-- git commit message -->
+					<noJekyll>true</noJekyll>  <!-- disable webpage processing -->
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<branch>refs/heads/mvn-repo</branch> <!-- remote branch name -->
+					<merge>true</merge>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<repositoryName>repository</repositoryName> <!-- github repo name -->
+					<repositoryOwner>eschoysman</repositoryOwner> <!-- organization or user name  -->
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- Logger -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.32</version>
+		</dependency>
+
+		<!-- Optional -->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-context</artifactId>
+		  <version>${spring.context.version}</version>
+		  <optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.engine.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.runner.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+        <!-- Test Logging - uncomment only one at time -->
+		<!-- SLF4J-simple -->
+<!--		<dependency>-->
+<!--			<groupId>org.slf4j</groupId>-->
+<!--			<artifactId>slf4j-simple</artifactId>-->
+<!--			<version>1.7.30</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+		<!-- log4j -->
+<!--		<dependency>-->
+<!--			<groupId>org.slf4j</groupId>-->
+<!--			<artifactId>slf4j-log4j12</artifactId>-->
+<!--			<version>1.7.30</version>-->
+<!--		</dependency>-->
+		<!-- log4j2 -->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.logging.log4j</groupId>-->
+<!--			<artifactId>log4j-slf4j-impl</artifactId>-->
+<!--			<version>2.9.0</version>-->
+<!--		</dependency>-->
+		<!-- JUL (java.util.logging) -->
+<!--		<dependency>-->
+<!--			<groupId>org.slf4j</groupId>-->
+<!--			<artifactId>slf4j-jdk14</artifactId>-->
+<!--			<version>1.7.30</version>-->
+<!--		</dependency>-->
+		<!-- Logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+	</dependencies>
+
+</project>
