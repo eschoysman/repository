@@ -52,7 +52,7 @@
 		<repository>
 			<id>gitRepo</id>
 			<name>Mapper</name>
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<url>file://${project.basedir}/../mvn-repo</url>
 		</repository>
 	</distributionManagement>
 
