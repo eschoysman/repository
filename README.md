@@ -1,19 +1,5 @@
 # Maven Repository
 
-## Configurazine settings.xml
-
-Nella cartella .m2 di maven, configurare il server di GitHub:
-
-```xml
-<servers>
-    <server>
-        <id>github</id>
-        <username>eschoysman</username>
-        <password>password generata da GitHub (presente sul PC fisso)</password>
-    </server>
-</servers>
-```
-
 ## Definizione repository
 
 ```xml
