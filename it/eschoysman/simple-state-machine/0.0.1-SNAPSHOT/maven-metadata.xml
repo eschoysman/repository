@@ -3,27 +3,27 @@
   <groupId>it.eschoysman</groupId>
   <artifactId>simple-state-machine</artifactId>
   <versioning>
-    <lastUpdated>20240405171241</lastUpdated>
+    <lastUpdated>20240410080341</lastUpdated>
     <snapshot>
-      <timestamp>20240405.171241</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20240410.080341</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>0.0.1-20240405.171241-1</value>
-        <updated>20240405171241</updated>
+        <value>0.0.1-20240410.080341-2</value>
+        <updated>20240410080341</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>0.0.1-20240405.171241-1</value>
-        <updated>20240405171241</updated>
+        <value>0.0.1-20240410.080341-2</value>
+        <updated>20240410080341</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>0.0.1-20240405.171241-1</value>
-        <updated>20240405171241</updated>
+        <value>0.0.1-20240410.080341-2</value>
+        <updated>20240410080341</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
