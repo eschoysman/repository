@@ -80,6 +80,14 @@
     <version>${utilities-version}</version>
 </dependency>
 ```
+- **utility-file**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-file</artifactId>
+    <version>${utilities-version}</version>
+</dependency>
+```
 - **utility-printer**
 ```xml
 <dependency>
