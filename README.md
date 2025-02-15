@@ -1,5 +1,18 @@
 # Maven Repository
 
+- [Definizione repository](#definizione-repository)
+- [Dependencies](#dependencies)
+    - [Utilities](#utilities)
+        - utility-all
+        - utility-core
+        - utility-math
+        - fluent
+        - utility-datastructures
+        - utility-file
+        - utility-printer
+    - [Mapper](#mapper)
+    - [Simple State Machine](#simple-state-machine)
+
 ## Definizione repository
 
 ```xml
@@ -17,89 +30,23 @@
 
 ## Dependencies
 
-### Mapper
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>it.eschoysman</groupId>
-        <artifactId>mapper</artifactId>
-        <version>1.0.0</version>
-    </dependency>
-</dependencies>
-```
-
-### **Simple State Machine**
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>it.eschoysman</groupId>
-        <artifactId>simple-state-machine</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-</dependencies>
-```
-
 ### Utilities
 
-#### Versioni disponibili:
+#### Versioni disponibili per la libreria completa e per quelle specifiche:
 - `0.1.0-SNAPSHOT` - LATEST
 
+#### Libreria completa:
+- **utility-all**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-all</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+<details>
+<summary><b>Dipendenza obsoleta</b></summary>
 
-#### Dipendenze:
-- **utility-core**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>utility-core</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-- **utility-math**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>utility-math</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-- **fluent**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>fluent</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-- **utility-datastructures**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>utility-datastructures</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-- **utility-file**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>utility-file</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-- **utility-printer**
-```xml
-<dependency>
-    <groupId>it.eschoysman</groupId>
-    <artifactId>utility-printer</artifactId>
-    <version>${utilities-version}</version>
-</dependency>
-```
-
-### Utility
-
-Dipendenza obsoleta, sostituita con le [utilities](#Utilities) sopra.
 #### Versioni disponibili:
 - `0.0.3-SNAPSHOT` - LATEST
 - `0.0.2-SNAPSHOT`
@@ -111,6 +58,90 @@ Dipendenza obsoleta, sostituita con le [utilities](#Utilities) sopra.
         <groupId>it.eschoysman</groupId>
         <artifactId>utility</artifactId>
         <version>LATEST</version>
+    </dependency>
+</dependencies>
+```
+</details>
+
+<br>
+
+#### Librerie specifiche:
+
+- **utility-core**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-core</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+- **utility-math**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-math</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+- **fluent**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>fluent</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+- **utility-datastructures**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-datastructures</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+- **utility-file**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-file</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+- **utility-printer**
+```xml
+<dependency>
+    <groupId>it.eschoysman</groupId>
+    <artifactId>utility-printer</artifactId>
+    <version>LATEST</version>
+</dependency>
+```
+
+---
+### Mapper
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>mapper</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
+```
+---
+### Simple State Machine
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>simple-state-machine</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
