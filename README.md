@@ -49,7 +49,7 @@
 <summary><b>Dipendenza obsoleta</b></summary>
 
 #### Versioni disponibili:
-- `0.0.3-SNAPSHOT` - LATEST
+- `0.0.3-SNAPSHOT`
 - `0.0.2-SNAPSHOT`
 - `0.0.1-SNAPSHOT`
 
