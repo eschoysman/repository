@@ -12,6 +12,7 @@
         - utility-printer
     - [Mapper](#mapper)
     - [Simple State Machine](#simple-state-machine)
+    - [RetrofitXtended](#retrofitxtended)
 
 ## Definizione repository
 
@@ -142,6 +143,30 @@
         <groupId>it.eschoysman</groupId>
         <artifactId>simple-state-machine</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+---
+### RetrofitXtended
+- `0.1.0-SNAPSHOT` - LATEST
+
+Questa libreria necessità della dipendenza retrofitxtended-core per funzionare, la dipendenza retrofitxtended-interceptors auto-aggiunge degli inteterceptors utili
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>retrofitxtended-core</artifactId>
+        <version>LATEST</version>
+    </dependency>
+</dependencies>
+```
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>retrofitxtended-interceptors</artifactId>
+        <version>LATEST</version>
     </dependency>
 </dependencies>
 ```
