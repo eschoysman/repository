@@ -13,6 +13,8 @@
     - [Mapper](#mapper)
     - [Simple State Machine](#simple-state-machine)
     - [RetrofitXtended](#retrofitxtended)
+        - retrofitxtended-core
+        - retrofitxtended-interceptors
 
 ## Definizione repository
 
@@ -45,24 +47,6 @@
     <version>LATEST</version>
 </dependency>
 ```
-<details>
-<summary><b>Dipendenza obsoleta</b></summary>
-
-#### Versioni disponibili:
-- `0.0.3-SNAPSHOT`
-- `0.0.2-SNAPSHOT`
-- `0.0.1-SNAPSHOT`
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>it.eschoysman</groupId>
-        <artifactId>utility</artifactId>
-        <version>LATEST</version>
-    </dependency>
-</dependencies>
-```
-</details>
 
 <br>
 
@@ -148,10 +132,11 @@
 ```
 ---
 ### RetrofitXtended
-- `0.1.0-SNAPSHOT` - LATEST
+- `0.0.1-SNAPSHOT` - LATEST
 
 Questa libreria necessità della dipendenza retrofitxtended-core per funzionare, la dipendenza retrofitxtended-interceptors auto-aggiunge degli inteterceptors utili
 
+- **retrofitxtended-core**
 ```xml
 <dependencies>
     <dependency>
@@ -161,6 +146,7 @@ Questa libreria necessità della dipendenza retrofitxtended-core per funzionare,
     </dependency>
 </dependencies>
 ```
+- **retrofitxtended-interceptors**
 ```xml
 <dependencies>
     <dependency>
