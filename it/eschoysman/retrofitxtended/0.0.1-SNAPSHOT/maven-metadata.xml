@@ -3,16 +3,16 @@
   <groupId>it.eschoysman</groupId>
   <artifactId>retrofitxtended</artifactId>
   <versioning>
-    <lastUpdated>20260331072059</lastUpdated>
+    <lastUpdated>20260331073418</lastUpdated>
     <snapshot>
-      <timestamp>20260331.072059</timestamp>
+      <timestamp>20260331.073418</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>0.0.1-20260331.072059-1</value>
-        <updated>20260331072059</updated>
+        <value>0.0.1-20260331.073418-1</value>
+        <updated>20260331073418</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
