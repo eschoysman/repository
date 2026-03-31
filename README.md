@@ -13,6 +13,7 @@
     - [Mapper](#mapper)
     - [Simple State Machine](#simple-state-machine)
     - [RetrofitXtended](#retrofitxtended)
+        - retrofitxtended-single
         - retrofitxtended-core
         - retrofitxtended-interceptors
 
@@ -36,7 +37,12 @@
 ### Utilities
 
 #### Versioni disponibili per la libreria completa e per quelle specifiche:
-- `0.1.0-SNAPSHOT` - LATEST
+- Versione
+```xml
+<properties>
+  <utility.version>0.1.0-SNAPSHOT</utility.version>
+</properties>
+```
 
 #### Libreria completa:
 - **utility-all**
@@ -44,11 +50,9 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-all</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
-
-<br>
 
 #### Librerie specifiche:
 
@@ -57,7 +61,7 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-core</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
@@ -66,7 +70,7 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-math</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
@@ -75,7 +79,7 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>fluent</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
@@ -84,7 +88,7 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-datastructures</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
@@ -93,7 +97,7 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-file</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
@@ -102,39 +106,74 @@
 <dependency>
     <groupId>it.eschoysman</groupId>
     <artifactId>utility-printer</artifactId>
-    <version>LATEST</version>
+    <version>${utility.version}</version>
 </dependency>
 ```
 
 ---
 ### Mapper
-
+- Versione
+```xml
+<properties>
+  <mapper.version>1.0.0</mapper.version>
+</properties>
+```
+- Dipendenza
 ```xml
 <dependencies>
     <dependency>
         <groupId>it.eschoysman</groupId>
         <artifactId>mapper</artifactId>
-        <version>1.0.0</version>
+        <version>${mapper.version}</version>
     </dependency>
 </dependencies>
 ```
 ---
 ### Simple State Machine
-
+- Versione
+```xml
+<properties>
+  <simple-state-machine.version>0.0.1-SNAPSHOT</simple-state-machine.version>
+</properties>
+```
+- Dipendenza
 ```xml
 <dependencies>
     <dependency>
         <groupId>it.eschoysman</groupId>
         <artifactId>simple-state-machine</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${simple-state-machine.version}</version>
     </dependency>
 </dependencies>
 ```
 ---
 ### RetrofitXtended
-- `0.0.1-SNAPSHOT` - LATEST
+- Versione
+```xml
+<properties>
+  <retrofitxtended.version>0.0.1-SNAPSHOT</retrofitxtended.version>
+</properties>
+```
 
-Questa libreria necessità della dipendenza retrofitxtended-core per funzionare, la dipendenza retrofitxtended-interceptors auto-aggiunge degli inteterceptors utili
+#### Fat Jar
+Versione completa della libreria con tutte le sue dipendenze integrate, no javadoc.
+
+- Dipendenza
+```xml
+<dependencies>
+    <dependency>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>retrofitxtended-single</artifactId>
+        <version>${retrofitxtended.version}</version>
+    </dependency>
+</dependencies>
+```
+
+
+#### Versione leggera
+Versione leggera della libreria, senza le dipendenze integrate, con javadoc.
+
+Questa versione necessità della dipendenza retrofitxtended-core per funzionare. La dipendenza retrofitxtended-interceptors auto-aggiunge degli inteterceptors utili:
 
 - **retrofitxtended-core**
 ```xml
@@ -142,17 +181,18 @@ Questa libreria necessità della dipendenza retrofitxtended-core per funzionare,
     <dependency>
         <groupId>it.eschoysman</groupId>
         <artifactId>retrofitxtended-core</artifactId>
-        <version>LATEST</version>
+        <version>${retrofitxtended.version}</version>
     </dependency>
 </dependencies>
 ```
+
 - **retrofitxtended-interceptors**
 ```xml
 <dependencies>
     <dependency>
         <groupId>it.eschoysman</groupId>
         <artifactId>retrofitxtended-interceptors</artifactId>
-        <version>LATEST</version>
+        <version>${retrofitxtended.version}</version>
     </dependency>
 </dependencies>
 ```
