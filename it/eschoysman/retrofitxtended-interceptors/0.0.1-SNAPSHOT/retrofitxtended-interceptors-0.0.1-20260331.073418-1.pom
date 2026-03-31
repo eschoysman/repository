@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>it.eschoysman</groupId>
+        <artifactId>retrofitxtended</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>retrofitxtended-interceptors</artifactId>
+    <name>RetrofitXtended - Interceptors collection</name>
+
+    <properties>
+        <retrofitxtended.version>0.0.1-SNAPSHOT</retrofitxtended.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.eschoysman</groupId>
+            <artifactId>retrofitxtended-core</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

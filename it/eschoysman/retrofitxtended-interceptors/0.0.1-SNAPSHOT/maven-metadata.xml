@@ -3,27 +3,27 @@
   <groupId>it.eschoysman</groupId>
   <artifactId>retrofitxtended-interceptors</artifactId>
   <versioning>
-    <lastUpdated>20260325173844</lastUpdated>
+    <lastUpdated>20260331073418</lastUpdated>
     <snapshot>
-      <timestamp>20260325.173844</timestamp>
+      <timestamp>20260331.073418</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>0.0.1-20260325.173844-1</value>
-        <updated>20260325173844</updated>
+        <value>0.0.1-20260331.073418-1</value>
+        <updated>20260331073418</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>0.0.1-20260325.173844-1</value>
-        <updated>20260325173844</updated>
+        <value>0.0.1-20260331.073418-1</value>
+        <updated>20260331073418</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>0.0.1-20260325.173844-1</value>
-        <updated>20260325173844</updated>
+        <value>0.0.1-20260331.073418-1</value>
+        <updated>20260331073418</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
